@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx src/index.ts",
+    "server": "tsx src/server.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "tsx tests/reflection.test.ts"

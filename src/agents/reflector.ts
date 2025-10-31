@@ -7,9 +7,11 @@ Theme: {question}
 Motivational Phrase: {answer}
 
 Provide a comprehensive evaluation with:
-1. **Strengths**: What works well (be specific - mention impact, word choice, emotional resonance)
-2. **Weaknesses**: What needs improvement (be specific - mention what's missing, generic phrases, unclear meaning)
-3. **Suggestions**: Concrete, actionable improvements (specific words to change, ideas to add, structure improvements)
+1. **Strengths**: What works well (be specific - mention impact, word choice, emotional resonance, brevity)
+2. **Weaknesses**: What needs improvement (be specific - mention length, unnecessary words, generic phrases, unclear meaning)
+3. **Suggestions**: Concrete, actionable improvements to make it shorter, more direct, and impactful
+
+IMPORTANT: The phrase must be short (15-20 words max) and direct. Remove unnecessary words. Be concise.
 
 Rate the overall quality on a scale and explain your rating. Be thorough and specific in your analysis.`;
 

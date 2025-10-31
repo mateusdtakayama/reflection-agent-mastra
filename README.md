@@ -30,14 +30,13 @@ MODEL_NAME=gpt-4o-mini
 ### 3. Run the project
 
 ```bash
-# Development mode
+# Development mode (CLI)
 npm run dev
 
-# Compile TypeScript
-npm run build
+# Web interface (start server)
+npm run server
 
-# Run compiled version
-npm start
+# Then open http://localhost:3000 in your browser
 ```
 
 ## Project Structure
@@ -47,9 +46,37 @@ reflection-agent/
 ├── src/
 │   ├── agents/          # Agents (generator, reflector, refiner)
 │   ├── config.ts        # Project configuration
-│   └── index.ts         # Entry point
-├── prompts/              # Prompt templates
-├── tests/               # Tests
+│   ├── orchestrator.ts  # Reflection orchestrator
+│   ├── index.ts         # CLI entry point
+│   └── server.ts        # Web server
+├── public/              # Web interface
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
 ├── .env.example         # Environment variables example
 └── package.json
 ```
+
+## Features
+
+- 🤖 **Generator Agent**: Creates initial motivational phrases
+- 🔍 **Reflector Agent**: Critically analyzes and provides feedback
+- ✨ **Refiner Agent**: Improves phrases based on feedback
+- 📊 **Quality Scoring**: Automatic quality assessment
+- 🌐 **Web Interface**: Visual workflow display
+- 🔄 **Iterative Improvement**: Multi-iteration refinement cycle
+
+## Usage
+
+### CLI Mode
+
+```bash
+npm run dev
+```
+
+### Web Interface
+
+1. Start the server: `npm run server`
+2. Open `http://localhost:3000` in your browser
+3. Enter a theme (e.g., "perseverance", "success", "dreams")
+4. Watch the reflection cycle unfold step by step

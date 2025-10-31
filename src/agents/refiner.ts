@@ -12,9 +12,16 @@ Your task:
 2. Create a NEW, significantly improved version that addresses the weaknesses
 3. Maintain what works well (the strengths mentioned)
 4. Implement the concrete suggestions provided
-5. Make the phrase more impactful, memorable, and inspiring
+5. Make the phrase SHORTER, MORE DIRECT, and more impactful
 
-Generate a substantially improved motivational phrase that shows clear progression from the original.`;
+CRITICAL REQUIREMENTS:
+- Maximum 15-20 words
+- Short and direct (remove all unnecessary words)
+- Keep only the essential message
+- Make every word count
+- More impactful and memorable than the original
+
+Return ONLY the improved phrase, nothing else.`;
 
 export interface RefinerInput {
   question: string;

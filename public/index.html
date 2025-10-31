@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reflection Agent - Motivational Phrases</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Reflection Agent</h1>
+      <p class="subtitle">Generate inspiring motivational phrases through AI reflection</p>
+    </header>
+
+    <div class="theme-input-section">
+      <label for="theme-select">Choose a theme:</label>
+      <select id="theme-select" class="theme-select">
+        <option value="perseverance">Perseverance</option>
+        <option value="success">Success</option>
+        <option value="dreams">Dreams and Goals</option>
+        <option value="self-confidence">Self-Confidence</option>
+        <option value="overcoming challenges">Overcoming Challenges</option>
+        <option value="resilience">Resilience</option>
+        <option value="growth">Personal Growth</option>
+        <option value="motivation">Motivation</option>
+        <option value="courage">Courage</option>
+        <option value="determination">Determination</option>
+        <option value="hope">Hope</option>
+        <option value="transformation">Transformation</option>
+      </select>
+      <label for="theme-input" class="or-label">or enter custom theme:</label>
+      <input 
+        type="text" 
+        id="theme-input" 
+        placeholder="Enter your own theme..."
+      >
+      <button id="generate-btn" class="primary-btn">
+        <span class="btn-text">Generate Motivational Phrase</span>
+        <span class="btn-loader" style="display: none;">⏳ Generating...</span>
+      </button>
+    </div>
+
+    <div id="results-section" class="results-section hidden">
+      <div class="stats-bar">
+        <div class="stat">
+          <span class="stat-label">Iterations:</span>
+          <span id="iteration-count" class="stat-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Final Score:</span>
+          <span id="final-score" class="stat-value">0.00</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Status:</span>
+          <span id="status" class="stat-value">-</span>
+        </div>
+      </div>
+
+      <div id="iterations-container" class="iterations-container"></div>
+
+      <div class="final-result">
+        <h2>Final Motivational Phrase</h2>
+        <div id="final-phrase" class="phrase-display"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+

@@ -1,15 +1,19 @@
 import { Agent } from "@mastra/core/agent";
 import { openAIConfig } from "../config.js";
 
-const GENERATOR_PROMPT_TEMPLATE = `Create an inspiring and motivational phrase based on the following theme:
+const GENERATOR_PROMPT_TEMPLATE = `Create a short, direct, and inspiring motivational phrase based on the following theme:
 
 Theme: {user_input}
 
-The phrase should be:
-- Short and impactful
+Requirements:
+- Maximum 15-20 words
+- Short and direct (no unnecessary words)
+- Impactful and memorable
 - Inspiring and uplifting
 - Relevant to the theme
-- Written in a positive tone`;
+- Written in a positive tone
+
+Return ONLY the phrase, nothing else.`;
 
 export interface GeneratorInput {
   userInput: string;
