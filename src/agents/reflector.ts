@@ -1,19 +1,17 @@
 import { Agent } from "@mastra/core/agent";
 import { openAIConfig } from "../config.js";
 
-// Reflector prompt template
-const REFLECTOR_PROMPT_TEMPLATE = `Critically analyze the following response:
+const REFLECTOR_PROMPT_TEMPLATE = `Critically analyze the following motivational phrase and provide detailed feedback:
 
-Question: {question}
-Answer: {answer}
+Theme: {question}
+Motivational Phrase: {answer}
 
-Evaluate:
-1. Accuracy of information
-2. Clarity of explanation
-3. Completeness of the response
-4. Structure and organization
+Provide a comprehensive evaluation with:
+1. **Strengths**: What works well (be specific - mention impact, word choice, emotional resonance)
+2. **Weaknesses**: What needs improvement (be specific - mention what's missing, generic phrases, unclear meaning)
+3. **Suggestions**: Concrete, actionable improvements (specific words to change, ideas to add, structure improvements)
 
-Provide specific feedback and improvement suggestions.`;
+Rate the overall quality on a scale and explain your rating. Be thorough and specific in your analysis.`;
 
 export interface ReflectorInput {
   question: string;
@@ -23,8 +21,8 @@ export interface ReflectorInput {
 /**
  * Reflector Agent
  * Responsibilities:
- * - Analyze the generated response
- * - Identify problems (accuracy, clarity, completeness)
+ * - Analyze the generated motivational phrase
+ * - Evaluate impact, relevance, and inspirational quality
  * - Generate constructive feedback
  * - Suggest specific improvements
  */
@@ -38,7 +36,7 @@ export function createReflectorAgent() {
 }
 
 /**
- * Reflect on a response and provide feedback
+ * Reflect on a motivational phrase and provide feedback
  */
 export async function reflectOnResponse(
   agent: Agent,

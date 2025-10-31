@@ -1,14 +1,20 @@
 import { Agent } from "@mastra/core/agent";
 import { openAIConfig } from "../config.js";
 
-// Refiner prompt template
-const REFINER_PROMPT_TEMPLATE = `Improve the following response based on the feedback:
+const REFINER_PROMPT_TEMPLATE = `Improve the following motivational phrase based on the detailed feedback:
 
-Question: {question}
-Original Answer: {original_answer}
+Theme: {question}
+Original Phrase: {original_answer}
 Feedback: {reflection_feedback}
 
-Generate an improved version that incorporates the suggestions.`;
+Your task:
+1. Carefully read ALL feedback points (strengths, weaknesses, suggestions)
+2. Create a NEW, significantly improved version that addresses the weaknesses
+3. Maintain what works well (the strengths mentioned)
+4. Implement the concrete suggestions provided
+5. Make the phrase more impactful, memorable, and inspiring
+
+Generate a substantially improved motivational phrase that shows clear progression from the original.`;
 
 export interface RefinerInput {
   question: string;
@@ -19,10 +25,10 @@ export interface RefinerInput {
 /**
  * Refiner Agent
  * Responsibilities:
- * - Receive original response + feedback
+ * - Receive original motivational phrase + feedback
  * - Apply suggested improvements
- * - Generate refined version
- * - Maintain context of the original question
+ * - Generate refined motivational phrase
+ * - Maintain relevance to the theme
  */
 export function createRefinerAgent() {
   return new Agent({
@@ -34,7 +40,7 @@ export function createRefinerAgent() {
 }
 
 /**
- * Refine a response based on feedback
+ * Refine a motivational phrase based on feedback
  */
 export async function refineResponse(
   agent: Agent,

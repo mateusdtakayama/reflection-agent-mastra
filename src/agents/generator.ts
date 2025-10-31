@@ -1,12 +1,15 @@
 import { Agent } from "@mastra/core/agent";
 import { openAIConfig } from "../config.js";
 
-// Generator prompt template
-const GENERATOR_PROMPT_TEMPLATE = `You are a specialized assistant. Answer the following question:
+const GENERATOR_PROMPT_TEMPLATE = `Create an inspiring and motivational phrase based on the following theme:
 
-{user_input}
+Theme: {user_input}
 
-Provide a complete and well-structured response.`;
+The phrase should be:
+- Short and impactful
+- Inspiring and uplifting
+- Relevant to the theme
+- Written in a positive tone`;
 
 export interface GeneratorInput {
   userInput: string;
@@ -15,9 +18,9 @@ export interface GeneratorInput {
 /**
  * Generator Agent
  * Responsibilities:
- * - Receive user input
- * - Generate initial response using GPT-4
- * - Return response for reflection
+ * - Receive a theme as input
+ * - Generate an initial motivational phrase
+ * - Return phrase for reflection
  */
 export function createGeneratorAgent() {
   return new Agent({
@@ -29,7 +32,7 @@ export function createGeneratorAgent() {
 }
 
 /**
- * Generate initial response from user input
+ * Generate initial motivational phrase from a theme
  */
 export async function generateResponse(
   agent: Agent,
