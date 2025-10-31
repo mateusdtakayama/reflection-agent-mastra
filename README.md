@@ -2,6 +2,10 @@
 
 A reflection agent that analyzes its own responses, identifies issues, and iteratively improves its output using the Mastra framework and OpenAI API.
 
+## 🎬 Demo
+
+![Reflection Agent Demo](docs/demo.gif)
+
 ## Setup
 
 ### 1. Install dependencies
